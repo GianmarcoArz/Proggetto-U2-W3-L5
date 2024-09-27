@@ -21,8 +21,6 @@
       .content {
         flex: 1;
       }
-      footer {
-      }
     </style>
   </head>
   <body class="pt-5">
@@ -54,7 +52,9 @@
                 <a class="nav-link" href="homepage.html">Home Page</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="backoffice.html">Back-Office</a>
+                <a class="nav-link" href="backoffice.html" id="backOfficeLink"
+                  >Back-Office</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="dettagli.html">Dettagli</a>
@@ -63,8 +63,75 @@
           </div>
         </nav>
       </header>
+      <section>
+        <div id="carouselExampleIndicators" class="carousel slide">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://www.digital-news.it/img/palinsesti/2024/09/1726824912-motogp-emiliaromagna.webp"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://motorcyclesports.net/wp-content/uploads/motogp-catalan-gp-2023-jorge-m-2.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://resources.motogp.pulselive.com/photo-resources/2023/09/18/d8003f96-6fe6-4d86-81a8-794a31a2dd3f/hungary-PR-1-.jpg?width=1440&height=810"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
       <div class="content container mt-5">
-        <h1>SUPER OFFERTE DI OGGI</h1>
+        <h1>SUPER OFFERTE DI OGGI NEL MONDO DUCATI</h1>
         <div class="row" id="productList"></div>
       </div>
       <footer class="bg-light text-dark mt-5 p-4">
@@ -96,7 +163,11 @@
         </div>
       </footer>
     </div>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="./homepage.js"></script>
   </body>
 </html>

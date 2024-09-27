@@ -61,6 +61,25 @@ function caricamentoProdotti() {
     });
 }
 
+document
+  .getElementById("backOfficeLink")
+  .addEventListener("click", function (event) {
+    event.preventDefault();
+    richiediPasswordEAccedi();
+  });
+
+function richiediPasswordEAccedi() {
+  const passwordInserita = prompt(
+    "Inserisci la password per accedere al Back-Office:"
+  );
+
+  if (passwordInserita === passwordDel) {
+    window.location.href = "backoffice.html";
+  } else {
+    alert("Password errata. Accesso negato al Back-Office.");
+  }
+}
+
 function richiediPasswordEElimina(productId, colonna) {
   const passwordInserita = prompt(
     "Inserisci la password per eliminare il prodotto:"
