@@ -4,13 +4,11 @@ const key =
 
 const form = document.getElementById("productForm");
 
-// Funzione per ottenere l'ID del prodotto dalla query string
 function getProductId() {
   const params = new URLSearchParams(window.location.search);
   return params.get("id");
 }
 
-// Funzione per caricare i dettagli del prodotto da modificare
 function loadProductDetail(productId) {
   fetch(apiURL + productId, {
     headers: { Authorization: key },
@@ -22,7 +20,6 @@ function loadProductDetail(productId) {
       return response.json();
     })
     .then((product) => {
-      // Popola il form con i dettagli del prodotto esistente
       document.getElementById("name").value = product.name;
       document.getElementById("description").value = product.description;
       document.getElementById("brand").value = product.brand;
@@ -34,7 +31,6 @@ function loadProductDetail(productId) {
     });
 }
 
-// Funzione per gestire la creazione o modifica del prodotto
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -49,7 +45,6 @@ form.addEventListener("submit", function (e) {
   const productId = getProductId();
 
   if (productId) {
-    // Se esiste un productId, facciamo una PUT per modificare il prodotto
     fetch(apiURL + productId, {
       method: "PUT",
       headers: {
@@ -67,17 +62,16 @@ form.addEventListener("submit", function (e) {
       .then((data) => {
         alert("Prodotto modificato con successo!");
         form.reset();
-        window.location.href = "./homepage.html"; // Reindirizza alla homepage dopo la modifica
+        window.location.href = "./homepage.html";
       })
       .catch((error) => {
         alert(error.message);
       });
   } else {
-    // Se non esiste un productId, facciamo una POST per creare un nuovo prodotto
     fetch(apiURL, {
       method: "POST",
       headers: {
-        Authorization: ley,
+        Authorization: key,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(product),
@@ -91,7 +85,7 @@ form.addEventListener("submit", function (e) {
       .then((data) => {
         alert("Prodotto creato con successo!");
         form.reset();
-        window.location.href = "homepage.html"; // Reindirizza alla homepage dopo la creazione
+        window.location.href = "homepage.html";
       })
       .catch((error) => {
         alert(error.message);
@@ -99,7 +93,6 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-// Se esiste un productId nella query string, carichiamo i dettagli del prodotto per la modifica
 const productId = getProductId();
 if (productId) {
   loadProductDetail(productId);
