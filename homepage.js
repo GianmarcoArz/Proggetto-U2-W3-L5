@@ -21,7 +21,13 @@ function caricamentoProdotti() {
         const productList = document.getElementById("productList");
 
         const colonna = document.createElement("div");
-        colonna.classList.add("col", "col-xl-4", "mb-4", "d-flex");
+        colonna.classList.add(
+          "col-12",
+          "col-md-4",
+          "col-xl-3",
+          "mb-4",
+          "d-flex"
+        );
 
         const productCard = document.createElement("div");
         productCard.classList.add("card", "h-100", "border-dark", "w-100");
@@ -35,9 +41,9 @@ function caricamentoProdotti() {
                   <p class="card-text"><strong>Prezzo:</strong> ${product.price}€</p>
               </div>
               <div class="card-footer">
-                  <a href="./dettagli.html?id=${product._id}" class="btn btn-info">Visualizza Dettagli</a>
-                  <a href="./backoffice.html?id=${product._id}" class="btn btn-warning">Modifica</a>
-                  <button class="btn btn-danger elimina-btn" data-id="${product._id}">Elimina</button>
+                  <a href="./dettagli.html?id=${product._id}" class="btn btn-info mt-1">Visualizza Dettagli</a>
+                  <a href="./backoffice.html?id=${product._id}" class="btn btn-warning mt-1">Modifica</a>
+                  <button class="btn btn-danger elimina-btn mt-1 " data-id="${product._id}">Elimina</button>
               </div>`;
 
         productList.appendChild(colonna);

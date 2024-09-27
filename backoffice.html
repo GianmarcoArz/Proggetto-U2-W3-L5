@@ -8,9 +8,64 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      .content {
+        flex: 1;
+      }
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
-    <div class="container mt-5">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://seeklogo.com/images/D/ducati-logo-28E4E31B64-seeklogo.com.png"
+            class="img-fluid"
+            alt="logo"
+            style="width: 50px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="homepage.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="backoffice.html">Back-Office</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dettagli.html">Dettagli</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <div class="container mt-5 content">
       <h1>Back-Office</h1>
       <form id="productForm">
         <div class="form-group">
@@ -40,6 +95,32 @@
         >Torna alla Homepage</a
       >
     </div>
+    <footer class="bg-light text-dark p-4">
+      <div class="container d-flex justify-content-between align-items-center">
+        <a href="#">
+          <img
+            src="https://www.salvatorepumo.it/wp-content/uploads/2021/12/Ducati-Logo-1997-600x338.png"
+            class="img-fluid"
+            alt="logo"
+            style="width: 150px; height: auto"
+          />
+        </a>
+        <div class="d-flex">
+          <ul class="list-unstyled mr-5">
+            <li><a href="#" class="text-dark">Contatti</a></li>
+            <li><a href="#" class="text-dark">Lavora con noi</a></li>
+            <li><a href="#" class="text-dark">Partner</a></li>
+            <li><a href="#" class="text-dark">video</a></li>
+          </ul>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark">Legale</a></li>
+            <li><a href="#" class="text-dark">Sede</a></li>
+            <li><a href="#" class="text-dark">Numero Verde</a></li>
+            <li><a href="#" class="text-dark">Le corse</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
     <script src="./backoffice.js"></script>
   </body>
